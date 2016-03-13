@@ -15,6 +15,10 @@ import {
 import me from './queries/me';
 import content from './queries/content';
 import news from './queries/news';
+import strategy from './queries/strategy';
+import topic from './queries/topic';
+import event from './queries/event';
+import photo from './queries/photo';
 
 const schema = new Schema({
   query: new ObjectType({
@@ -23,8 +27,11 @@ const schema = new Schema({
       me,
       content,
       news,
-    },
-  }),
+      strategy,
+      topic,
+      photo
+    }
+  })
 });
 
 export default schema;

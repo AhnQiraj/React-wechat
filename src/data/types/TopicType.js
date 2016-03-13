@@ -12,16 +12,21 @@ import {
   GraphQLID as ID,
   GraphQLString as StringType,
   GraphQLNonNull as NonNull,
+  GraphQLList as List
 } from 'graphql';
 
-const UserType = new ObjectType({
-  name: 'User',
+import StrategyType from './StrategyType';
+import UserType from './UserType';
+
+const TopicType = new ObjectType({
+  name: 'Topic',
   fields: {
-    id: { type: new NonNull(ID) },
-    email: { type: StringType },
-    avatar: { type: StringType },
-    nickname: { type: StringType },
-  },
+    owner: { type: UserType},
+    title: { type: StringType },
+    subTitle: { type: StringType },
+    cover: { type: StringType },
+    strategies: { type: new List(StrategyType)}
+  }
 });
 
-export default UserType;
+export default TopicType;

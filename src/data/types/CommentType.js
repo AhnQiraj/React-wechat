@@ -12,16 +12,17 @@ import {
   GraphQLID as ID,
   GraphQLString as StringType,
   GraphQLNonNull as NonNull,
+  GraphQLList as List
 } from 'graphql';
 
-const UserType = new ObjectType({
-  name: 'User',
+import UserType from './UserType';
+
+const CommentType = new ObjectType({
+  name: 'Comment',
   fields: {
-    id: { type: new NonNull(ID) },
-    email: { type: StringType },
-    avatar: { type: StringType },
-    nickname: { type: StringType },
-  },
+    commentUser: { type: UserType },
+    content: { type: StringType },
+  }
 });
 
-export default UserType;
+export default CommentType;
