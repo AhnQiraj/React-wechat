@@ -22,6 +22,7 @@ const CommentType = new ObjectType({
   fields: {
     commentUser: { type: UserType },
     content: { type: StringType },
+    createdAt: { type: StringType }
   }
 });
 
