@@ -33,6 +33,7 @@ export const action = async (state) => {
         nickname
         avatar
       }
+      createdAt
       content
     }
   }
